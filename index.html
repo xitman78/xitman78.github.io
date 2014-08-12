@@ -79,7 +79,7 @@ body {
 		background-color: #AAA;
 	}
 	
-	h1,p {
+	h1,p,div {
 		font-family: 'Signika', sans-serif;
 		font-weight: 300;
 	}
@@ -88,6 +88,42 @@ body {
 	.clear {
 		clear: both;
 	}
+
+	
+
+	#a_box {
+		width:100px;
+		height: 100px;
+		/*border: solid 2px #777;*/
+		position: absolute;
+		top:300px;
+		left:100px;
+		-webkit-animation: myfirst 1s linear 0s infinite alternate; /* Chrome, Safari, Opera */
+    	animation: myfirst 1s linear 0s infinite alternate;
+	}
+
+	@-webkit-keyframes myfirst {
+		0%   {left:100px;}
+		50%  {left:500px;}
+		100%   {left:100px;}
+
+	}
+
+	@-webkit-keyframes rotator {
+		from {-webkit-transform: rotate(0deg);}
+		to {-webkit-transform: rotate(360deg);}
+	}
+
+	#circle {
+		position: absolute;
+		left:100px;
+		top:150px;
+		-webkit-transform-origin:0 0;
+		-webkit-animation: rotator 1s linear 0s infinite;
+	}
+
+	
+
 </style>
 </head>
 <boody>
@@ -114,6 +150,19 @@ body {
 
 <h1>IO Test message</h1>
 <p>Wow! It's working</p>
+<svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+  <circle cx="0" cy="0" r="20" stroke="#AAA" stroke-width="4" fill="none" />
+</svg>
+<div id="b_box">Content</div>
+<svg height="80" width="300">
+  <g fill="none" stroke="black" stroke-width="4">
+    <path stroke-linecap="round" stroke-dasharray="0,10" d="M5 20 l215 0" />
+    <path stroke-linecap="round" stroke-dasharray="10,10" d="M5 40 l215 0" />
+    <path stroke-linecap="round" stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
+  </g>
+</svg>
+</svg>
 </body>
 </html>
 
