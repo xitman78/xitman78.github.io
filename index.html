@@ -28,6 +28,7 @@ body {
 		position: fixed;
 		left: 0;
 		top:0;
+		z-index: 100;
 	}
 
 	ul#nav {
@@ -132,11 +133,8 @@ body {
 	#b_box {
 		width:300px;
 		height: 50px;
-		border: solid 5px #999;
+		border: solid 5px #FFF;
 		margin-top: 50px;
-		box-shadow:
-		  0 0 0 10px rgba(255, 255, 255,1),
-		  0 0 0 11px #999;
 
 		text-align: center;
 		vertical-align: middle;
@@ -148,6 +146,7 @@ body {
 	    left: 0;
 	    right: 0;
 		margin: auto;
+		background-color: rgba(0,0,0,0.5);
 	}
 
 	#b_thin {
@@ -190,7 +189,10 @@ body {
 		background-color: rgba(0,0,0,0.5);
 		padding:10px;
 		margin-top: 36px;
+		z-index: -1;
 	}
+
+	h2 {margin-top: 0;}
 
 </style>
 </head>
@@ -215,17 +217,20 @@ body {
 </ul>
 </div>
 <div class="clear"></div>
-<div align="center" class="semitrans shadow-txt1">
+<div align="center" class="semitrans shadow-txt1 animated fadeInDown">
 <h1>Welcome to Mezygirya Residence</h1>
 <p>The place where ex-president Yanukovich was happy.</p>
 </div>
 
 <div id="b_box" class="animated fadeInDown">
+ <h2>Start Tour</h2>
+</div>
+
 <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
   <circle cx="0" cy="0" r="20" stroke="#AAA" stroke-width="4" fill="none" />
   <circle cx="0" cy="0" r="14" stroke="#AAA" stroke-width="2" fill="none" />
-</div>
+ </svg>
 
 <div style="width:100px;height:500px;"></div>
 <script type="text/javascript">
