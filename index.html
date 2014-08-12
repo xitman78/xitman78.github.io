@@ -111,12 +111,6 @@ body {
     	animation: myfirst 1s linear 0s infinite alternate;
 	}
 
-	@-webkit-keyframes myfirst {
-		0%   {left:100px;}
-		50%  {left:500px;}
-		100%   {left:100px;}
-
-	}
 
 	@-webkit-keyframes rotator {
 		from {-webkit-transform: rotate(0deg);}
@@ -131,23 +125,30 @@ body {
 	}
 
 	#b_box {
+
 		width:300px;
 		height: 50px;
 		border: solid 5px #FFF;
-		margin-top: 50px;
 
 		text-align: center;
 		vertical-align: middle;
 		line-height: 50px;
 		cursor:pointer;
-		position: absolute;
+		background-color: rgba(0,0,0,0.5);
+
+	}
+
+#center_media {
+	position: absolute;
 		top:0;
 	    bottom: 0;
 	    left: 0;
 	    right: 0;
 		margin: auto;
-		background-color: rgba(0,0,0,0.5);
-	}
+		width: 1000px;
+		height: 500px;
+}
+
 
 	#b_thin {
 
@@ -160,10 +161,28 @@ body {
 
 	.animated {
 	  -webkit-animation-duration: 1s;
-	  -webkit-animation-delay: 0.2s;
 	  animation-duration: 1s;
 	  -webkit-animation-fill-mode: both;
 	  animation-fill-mode: both;
+	}
+
+	.anim-delay02 {
+		-webkit-animation-delay: 0.2s;
+	} 
+	.anim-delay05 {
+		-webkit-animation-delay: 0.5s;
+	}
+	.anim-delay1s {
+		-webkit-animation-delay: 1s;
+	}
+	.anim-delay2s {
+		-webkit-animation-delay: 2s;
+	}
+	.anim-delay3s {
+		-webkit-animation-delay: 3s;
+	}
+	.anim-delay4s {
+		-webkit-animation-delay: 4s;
 	}
 
 	@-webkit-keyframes fadeInDown {
@@ -185,14 +204,74 @@ body {
 	  animation-name: fadeInDown;
 	}
 
+	@-webkit-keyframes fadeInRight {
+	  0% {
+	    opacity: 0;
+	    -webkit-transform: translate3d(-200px, 0, 0);
+	    transform: translate3d(-200px, 0, 0);
+	  }
+
+	  100% {
+	    opacity: 0.9;
+	    -webkit-transform: none;
+	    transform: none;
+	  }
+	}
+
+	.fadeInRight {
+	  -webkit-animation-name: fadeInRight;
+	  animation-name: fadeInRight;
+	}
+
+
+	@-webkit-keyframes fadeInLeft {
+	  0% {
+	    opacity: 0;
+	    -webkit-transform: translate3d(200px, 0, 0);
+	    transform: translate3d(200px, 0, 0);
+	  }
+
+	  100% {
+	    opacity: 0.9;
+	    -webkit-transform: none;
+	    transform: none;
+	  }
+	}
+
+	.fadeInLeft {
+	  -webkit-animation-name: fadeInLeft;
+	  animation-name: fadeInLeft;
+	}
+
 	.semitrans {
 		background-color: rgba(0,0,0,0.5);
 		padding:10px;
 		margin-top: 36px;
 		z-index: -1;
+
 	}
 
-	h2 {margin-top: 0;}
+
+	h3 {
+		font-family: 'Signika', sans-serif;
+		color: #fff;
+		text-shadow: 2px 2px 4px #000;
+	}
+
+	.tsize1 {
+		font-weight: 400;
+		font-size: 40px;
+	}
+
+	.tsize2 {
+		font-weight: 300;
+		font-size: 60px;
+	}
+
+	.tsize3 {
+		font-weight: 300;
+		font-size: 80px;
+	}
 
 </style>
 </head>
@@ -217,23 +296,27 @@ body {
 </ul>
 </div>
 <div class="clear"></div>
-<div align="center" class="semitrans shadow-txt1 animated fadeInDown">
+<div align="center" class="semitrans shadow-txt1 animated anim-delay02 fadeInDown">
 <h1>Welcome to Mezygirya Residence</h1>
 <p>The place where ex-president Yanukovich was happy.</p>
 </div>
 
-<div id="b_box" class="animated fadeInDown">
- <h2>Start Tour</h2>
-</div>
-<div align="center">
+
+<div id="center_media" align="center">
+	<div style="margin-top" style="position: absolute; top:10px; left: 450px;">
 <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
   <circle cx="0" cy="0" r="20" stroke="#FFF" stroke-width="4" fill="none" />
   <circle cx="0" cy="0" r="14" stroke="#FFF" stroke-width="2" fill="none" />
- </svg>
+</svg>
 </div>
-
-<div style="width:100px;height:500px;"></div>
+<h3 class="tsize1 animated fadeInRight anim-delay1s" style="position: absolute; top:30px; left: 150px;">HTML5 Web Motion </h3>
+<h3 class="tsize3  animated fadeInLeft anim-delay2s" style="position: absolute; top:40px; left: 350px;">CSS magic</h3>
+<h3 class="tsize2 animated fadeInRight anim-delay3s" style="position: absolute; top:230px; left: 250px;">Interactive Web Design</h3>
+<div id="b_box" class="animated fadeInDown anim-delay4s tsize1" style="position: absolute; top:220px; left:480px;">
+Start Tour
+</div>
+</div>
 <script type="text/javascript">
 // retrieve the element
 element = document.getElementById("b_box");
@@ -245,6 +328,9 @@ element.addEventListener("click", function(e) {
   // -> removing the class
   element.classList.remove("animated");
   element.classList.remove("fadeInDown");
+  element.classList.remove("anim-delay4s");
+  element.classList.remove("anim-delay02s");
+  
   
   // -> triggering reflow /* The actual magic */
   // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
@@ -253,6 +339,7 @@ element.addEventListener("click", function(e) {
   // -> and re-adding the class
   element.classList.add("animated");
   element.classList.add("fadeInDown");
+  element.classList.add("anim-delay02s");
 }, false);
 </script>
 
