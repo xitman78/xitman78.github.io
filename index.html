@@ -120,9 +120,8 @@ body {
 
 	#circle {
 		-webkit-transform-origin:0 0;
-		-webkit-animation: rotator 1s linear 0s infinite;
-		margin-left:70px;
-		margin-top: 25px;
+		-webkit-animation: rotator 3s linear 0s infinite;
+
 	}
 
 	#b_box {
@@ -203,6 +202,25 @@ body {
 	.fadeInDown {
 	  -webkit-animation-name: fadeInDown;
 	  animation-name: fadeInDown;
+	}
+
+	@-webkit-keyframes fadeInZoom {
+	  0% {
+	    opacity: 0;
+	    -webkit-transform: scale3d(2,2,1);
+	    transform: scale3d(2,2,1);
+	  }
+
+	  100% {
+	    opacity: 1;
+	    -webkit-transform: none;
+	    transform: none;
+	  }
+	}
+
+	.fadeInZoom {
+	  -webkit-animation-name: fadeInZoom;
+	  animation-name: fadeInZoom;
 	}
 
 	@-webkit-keyframes fadeInRight {
@@ -304,11 +322,12 @@ body {
 
 
 <div id="center_media" align="center">
-	<div style="margin-top" style="position: absolute; top:110px; left: 450px;">
-<svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-  <circle cx="0" cy="0" r="20" stroke="#FFF" stroke-width="4" fill="none" />
-  <circle cx="0" cy="0" r="14" stroke="#FFF" stroke-width="2" fill="none" />
+<div style="position: absolute; top:203px; left: 854px; width:200px; height: 200px;z-index:500">
+<svg id="circle"  version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+  <circle cx="0" cy="0" r="40" stroke="#FFF" stroke-width="4" fill="none" />
+  <circle cx="0" cy="0" r="34" stroke="#FFF" stroke-width="2" fill="none" style="opacity:0.4"/>
+  <circle cx="0" cy="0" r="10" stroke="#FFF"  fill="#FFF" style="opacity:0.3"/>
 </svg>
 </div>
 <h3 class="tsize1 animated fadeInRight anim-delay1s" style="position: absolute; top:130px; left: 150px;">HTML5 Web Motion </h3>
@@ -318,7 +337,7 @@ body {
 </div>
 <h3 class="tsize2 animated fadeInRight anim-delay3s" style="position: absolute; top:330px; left: 250px;">Interactive Web Design</h3>
 
-<div id="b_box" class="animated fadeInDown anim-delay4s tsize1" style="position: absolute; top:320px; left:480px;">
+<div id="b_box" class="animated fadeInZoom anim-delay4s tsize1" style="position: absolute; top:320px; left:480px;">
 Start Tour
 </div>
 </div>
@@ -332,7 +351,7 @@ element.addEventListener("click", function(e) {
   
   // -> removing the class
   element.classList.remove("animated");
-  element.classList.remove("fadeInDown");
+  element.classList.remove("fadeInZoom");
   element.classList.remove("anim-delay4s");
   element.classList.remove("anim-delay02s");
   
@@ -343,7 +362,7 @@ element.addEventListener("click", function(e) {
   
   // -> and re-adding the class
   element.classList.add("animated");
-  element.classList.add("fadeInDown");
+  element.classList.add("fadeInZoom");
   element.classList.add("anim-delay02s");
 }, false);
 </script>
