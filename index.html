@@ -3,7 +3,7 @@
 <head>
 <title>IOTest</title>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width-device-width, initial-scale=1.0">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Signika:600,400,300,700' rel='stylesheet' type='text/css'>
@@ -34,8 +34,17 @@
 <h1>Welcome to Mezygirya Residence</h1>
 <p>The place where ex-president Yanukovich was happy.</p>
 </div>
+<div align="center" style="width:100%">
 
+<div id="reload" class="animated fadeInZoom anim-delay4s" style="width:50px;height:50px;cursor:pointer">
+<svg width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
+  <path d="M 25 42 A 15 15 0 1 0 10 27" fill="none" stroke="#000" style="opacity:0.5" stroke-width="4" />
+  <polygon points="2,27 18,27 10,34" fill="#000" style="opacity:0.5" stroke="none" />
+  <path d="M 25 40 A 15 15 0 1 0 10 25" fill="none" stroke="#FFF" stroke-width="4" />
+  <polygon points="2,25 18,25 10,32" fill="#FFF" stroke="none" />
 
+</div>
+</svg>
 <div id="center_media" align="center">
 <div style="position: absolute; top:203px; left: 854px; width:200px; height: 200px;z-index:500" class="animated fadeInZoom anim-delay2s">
 <svg id="circle"  version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -114,7 +123,7 @@ $(document).ready(function(){
 
 				$("#center_media").fadeOut(1000);
 
-				setTimeout(function(){$("#scroll-content").load("scroll-content.html");$("#scroll-content").fadeIn(1000)}, 1000);
+				setTimeout(function(){$("#scroll-content").load("scroll-content.html");$("#scroll-content").fadeIn(1000);}, 1000);
 
 			}
 
@@ -122,8 +131,38 @@ $(document).ready(function(){
 
 	$(window).scroll(scroller);
 	$("#scroll-arrow").click(scroller);
+	$("#reload").click(function(){ location.reload();})
 
 });
+
+function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+  var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+
+  return {
+    x: centerX + (radius * Math.cos(angleInRadians)),
+    y: centerY + (radius * Math.sin(angleInRadians))
+  };
+}
+
+function describeArc(x, y, radius, startAngle, endAngle){
+
+    var start = polarToCartesian(x, y, radius, endAngle);
+    var end = polarToCartesian(x, y, radius, startAngle);
+
+    var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+
+    var d = [
+        "M", start.x, start.y, 
+        "A", radius, radius, 0, arcSweep, 0, end.x, end.y,
+        "L", x,y,
+        "L", start.x, start.y
+    ].join(" ");
+
+    return d;       
+}
+
+document.getElementById("arc1").setAttribute("d", "M 25 45 A 20 20 0 1 0 5 25");
+
 </script>
 
 </body>
