@@ -35,14 +35,20 @@
 <p>The place where ex-president Yanukovich was happy.</p>
 </div>
 <div align="center" style="width:100%">
-
-<div id="reload" class="animated fadeInZoom anim-delay4s" style="width:50px;height:50px;cursor:pointer">
+<div id="wrapper" style="width:50px;height:50px;display:block;position:relative;margin-top:20px;">
+<div id="reload" class="animated fadeInZoom anim-delay5s" style="width:50px;height:50px;position:absolute;top:0px;">
 <svg width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
   <path d="M 25 42 A 15 15 0 1 0 10 27" fill="none" stroke="#000" style="opacity:0.5" stroke-width="4" />
   <polygon points="2,27 18,27 10,34" fill="#000" style="opacity:0.5" stroke="none" />
   <path d="M 25 40 A 15 15 0 1 0 10 25" fill="none" stroke="#FFF" stroke-width="4" />
   <polygon points="2,25 18,25 10,32" fill="#FFF" stroke="none" />
 </svg>
+</div>
+<div class="animated fadeOutZoom anim-delay4s" style="width:50px;height:50px;position:absolute;top:0px;z-index:-10;">
+<svg id="dash-wait" width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
+	<circle cx="25" cy="25" r="20" stroke="#FFF" stroke-width="6" fill="none" stroke-dasharray="0,16" stroke-linecap="round"/>
+</svg>
+</div>
 </div>
 <div id="center_media" align="center">
 <div style="position: absolute; top:203px; left: 854px; width:200px; height: 200px;z-index:500" class="animated fadeInZoom anim-delay2s">
@@ -130,7 +136,10 @@ $(document).ready(function(){
 
 	$(window).scroll(scroller);
 	$("#scroll-arrow").click(scroller);
-	$("#reload").click(function(){ location.replace("index.html");})
+	setTimeout(function(){
+		$("#reload").click(function(){ location.replace("index.html");})
+		$("#reload").css("cursor","pointer");
+	},5000);
 
 });
 

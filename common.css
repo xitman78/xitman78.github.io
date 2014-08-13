@@ -118,6 +118,12 @@ body {
 
 	}
 
+	#dash-wait {
+		-webkit-transform-origin:25px 25px;
+		-webkit-animation: rotator 3s linear 0s infinite reverse;
+
+	}
+
 	#b_box {
 
 		width:300px;
@@ -258,6 +264,27 @@ body {
 	.fadeInZoom {
 	  -webkit-animation-name: fadeInZoom;
 	  animation-name: fadeInZoom;
+	}
+
+	@-webkit-keyframes fadeOutZoom {
+
+	  0% {
+	    opacity: 1;
+	    -webkit-transform: none;
+	    transform: none;
+	  }
+
+	  100% {
+	    opacity: 0;
+	    -webkit-transform: scale3d(2,2,1);
+	    transform: scale3d(2,2,1);
+	  }
+
+	}
+
+	.fadeOutZoom {
+	  -webkit-animation-name: fadeOutZoom;
+	  animation-name: fadeOutZoom;
 	}
 
 	@-webkit-keyframes fadeInRight {
