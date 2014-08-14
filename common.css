@@ -433,12 +433,7 @@ body {
 	.img-trans {
 
 		opacity:0;
-		transform: scale(0.3,0.3);
-		-webkit-transform: scale(0.3,0.3);
 		border: solid 2px #CCC;
-
-	    -webkit-transition: -webkit-transform 2s linear; 
-	    transition: transform  2s linear;
 
 	    -webkit-transition: opacity 2s linear; 
 	    transition: opacity  2s linear;
