@@ -4,7 +4,6 @@
 <title>IOTest</title>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width-device-width, initial-scale=1.0">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Signika:600,400,300,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="common.css">
@@ -128,7 +127,16 @@ $(document).ready(function(){
 
 				$("#center_media").fadeOut(1000);
 
-				setTimeout(function(){$("#scroll-content").load("scroll-content.html");$("#scroll-content").fadeIn(1000);}, 1000);
+				setTimeout(function(){
+          $("#scroll-content").load("scroll-content.html");
+
+          $("#scroll-content").css("opacity","1");
+
+        }, 1000);
+
+        setTimeout(function(){
+          $(".img-trans").css("opacity","1","transform","scale(1,1)","-webkit-transform","scale(1,1)");
+        },2000);
 
 			}
 
@@ -136,40 +144,17 @@ $(document).ready(function(){
 
 	$(window).scroll(scroller);
 	$("#scroll-arrow").click(scroller);
+
 	setTimeout(function(){
 		$("#reload").click(function(){ location.replace("index.html");})
 		$("#reload").css("cursor","pointer");
 	},5000);
 
+
+
 });
 
-function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-  var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
 
-  return {
-    x: centerX + (radius * Math.cos(angleInRadians)),
-    y: centerY + (radius * Math.sin(angleInRadians))
-  };
-}
-
-function describeArc(x, y, radius, startAngle, endAngle){
-
-    var start = polarToCartesian(x, y, radius, endAngle);
-    var end = polarToCartesian(x, y, radius, startAngle);
-
-    var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
-
-    var d = [
-        "M", start.x, start.y, 
-        "A", radius, radius, 0, arcSweep, 0, end.x, end.y,
-        "L", x,y,
-        "L", start.x, start.y
-    ].join(" ");
-
-    return d;       
-}
-
-document.getElementById("arc1").setAttribute("d", "M 25 45 A 20 20 0 1 0 5 25");
 
 </script>
 
