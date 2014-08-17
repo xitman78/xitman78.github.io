@@ -11,7 +11,7 @@
 <body>
 <div id="preload">Loading</div>
 <div id="all-wrap">
-<div class="bg-image">
+<div id="bg-preload" class="bg-image">
 </div>
 <div class="navwrap">
 <ul id="nav">
@@ -137,7 +137,7 @@ element.addEventListener("click", function(e) {
 
 $(document).ready(function(){
 
-  function preload(arrayOfImages) {
+ /* function preload(arrayOfImages) {
     $(arrayOfImages).each(function(){
         $('<img/>')[0].src = this;
         // Alternatively you could use:
@@ -156,10 +156,23 @@ preload([
     'imgs/slides/slide04.jpg',
     'imgs/slides/slide05.jpg',
     'imgs/slides/slide06.jpg',
-]);
+]);*/
   
-  $("#all-wrap").css("visibility","visible");
-  $("#preload").css("visibility","hidden");
+
+var bg_url = 'imgs/honka-bg.jpg';
+
+// preloading...
+var img = new Image();
+img.onload = function()
+{
+    // do transitions here...
+    $("#all-wrap").css("visibility","visible");
+    $("#preload").css("visibility","hidden");
+};
+img.src = bg_url;
+
+
+console.log(bg_url);
 
 
   $(window).scroll(scroller);
