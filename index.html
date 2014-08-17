@@ -132,6 +132,21 @@ element.addEventListener("click", function(e) {
 
 $(document).ready(function(){
 
+  function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+        // Alternatively you could use:
+        // (new Image()).src = this;
+    });
+}
+
+// Usage:
+
+preload([
+    'imgs/honka-bg.jpg',
+    'imgs/yanukovich01.jpg'
+]);
+
 	function scroller(e){
 
 			if(!scroll_flag) {
@@ -162,7 +177,7 @@ $(document).ready(function(){
             
             $.each( data.slides, function( key, val ) {
               
-              var img_html='<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide animated anim-delay0 fadeInZoom" />';
+              var img_html='<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide animated anim-delay0 fadeIn" />';
               console.log(img_html);
               items.push(img_html);
             });
@@ -174,7 +189,7 @@ $(document).ready(function(){
 
               $("#slider").html(items[0]);
 
-               console.log( "success - " + items[current_slide].src);
+               //console.log( "success - " + items[current_slide].uri);
           })
             .done(function() {
               console.log( "second success" );
