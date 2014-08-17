@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>IOTest</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -38,12 +38,12 @@
 <div class="tac" style="width:100%">
 <div style="width:50px;height:50px;display:block;position:relative;top:180px;left:0;right:0;margin:auto;">
   <div id="dash-wait" class="animated fadeOutZoom anim-delay4s" style="width:50px;height:50px;position:absolute;top:0px;z-index:910;">
-    <svg  width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
+    <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
     	<circle cx="25" cy="25" r="20" stroke="#FFF" stroke-width="6" fill="none" stroke-dasharray="0.01 16"  stroke-linecap="round" />
     </svg>
   </div>
   <div id="reload" class="animated fadeInZoom anim-delay5s" style="width:50px;height:50px;position:absolute;top:0px;z-index:920;">
-    <svg width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
       <path d="M 25 42 A 15 15 0 1 0 10 27" fill="none" stroke="#000" style="opacity:0.5" stroke-width="4" />
       <polygon points="2,27 18,27 10,34" fill="#000" style="opacity:0.5" stroke="none" />
       <path d="M 25 40 A 15 15 0 1 0 10 25" fill="none" stroke="#FFF" stroke-width="4" />
@@ -85,19 +85,20 @@ Start Tour
 <div class="ttable">
 <div class="trow">
 <div class="l-cell">
-<svg height="50" width="50">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" width="50" x="0px" y="0px">
   <rect id="t-rect" x="15" y="0"  rx="4" ry="4" width="35" height="50"/>
-  <polyline id="r-arrow" points="40,10 26,25 40,40" fill="none" stroke="#FFF" stroke-width="4" />
+  <polyline id="r-arrow" points="40,10 26,25 40,40" stroke-linecap="round" fill="none" stroke="#FFF" stroke-width="4" />
 </svg>
 </div>
 <div class="c-cell">
   <div id="slider"></div>
 </div>
 <div class="r-cell">
-<svg height="50" width="50">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" width="50" x="0px" y="0px">
   <rect id="t-rect2" x="0" y="0"  rx="4" ry="4" width="35" height="50" />
-  <polyline points="10,10 24,25 10,40" stroke-linecap="round" style="fill:none;stroke:#FFF;stroke-width:4;" />
-</svg></div>
+  <polyline points="10,10 24,25 10,40" stroke-linecap="round" style="fill:none;stroke:#FFF;stroke-width:4;z-index:999;opacity:1" />
+</svg>
+</div>
 </div>
 </div>
 </div>
