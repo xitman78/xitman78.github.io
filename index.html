@@ -9,6 +9,8 @@
 <link rel="stylesheet" type="text/css" href="common.css">
 </head>
 <body>
+<div id="preload">Loading</div>
+<div id="all-wrap">
 <div class="bg-image">
 </div>
 <div class="navwrap">
@@ -102,6 +104,7 @@ Start Tour
 </div>
 </div>
 </div>
+</div>
 <script type="text/javascript">
 // retrieve the element
 element = document.getElementById("b_box");
@@ -154,6 +157,9 @@ preload([
     'imgs/slides/slide05.jpg',
     'imgs/slides/slide06.jpg',
 ]);
+  
+  $("#all-wrap").css("visibility","visible");
+  $("#preload").css("visibility","hidden");
 
 
   $(window).scroll(scroller);
