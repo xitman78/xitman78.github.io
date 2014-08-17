@@ -1,8 +1,8 @@
 {"slides":[
-    {"uri":"imgs/slides/slide01.jpg","w":600, "h":450}, 
-    {"uri":"imgs/slides/slide02.jpg","w":600, "h":450},
-    {"uri":"imgs/slides/slide03.jpg","w":600, "h":450},
-    {"uri":"imgs/slides/slide04.jpg","w":600, "h":450},
-    {"uri":"imgs/slides/slide05.jpg","w":600, "h":450},
-    {"uri":"imgs/slides/slide06.jpg","w":600, "h":450}
+    {"uri":"imgs/slides/slide01.jpg","w":600, "h":450,"desc":"Such a lovely place in Mezygirya!"}, 
+    {"uri":"imgs/slides/slide02.jpg","w":600, "h":450,"desc":"Galeon - fake boat."},
+    {"uri":"imgs/slides/slide03.jpg","w":600, "h":450,"desc":"Tandyr"},
+    {"uri":"imgs/slides/slide04.jpg","w":600, "h":450,"desc":"It looks like a real ship from the distance."},
+    {"uri":"imgs/slides/slide05.jpg","w":600, "h":450,"desc":"Honka facing towards Dnepro river."},
+    {"uri":"imgs/slides/slide06.jpg","w":600, "h":450,"desc":"Very big coat or something like that."}
 ]}

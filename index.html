@@ -3,7 +3,6 @@
 <head>
 <title>IOTest</title>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Signika:600,400,300,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="common.css">
@@ -61,7 +60,7 @@
 <h3 class="tsize1 animated fadeInRight anim-delay1s" style="position: absolute; top:130px; left: 150px;">HTML5 Web Motion </h3>
 <h3 class="tsize3  animated fadeInLeft anim-delay2s" style="position: absolute; top:140px; left: 300px;">CSS Magics</h3>
 <div class="tsize2 animated fadeInLeft anim-delay2s" style="position: absolute; top:85px; left: 720px;width:250px; height:220px; border: solid 1px #CCC;">
-  <img src="imgs/yanukovich01.jpg" width="250px" height="220px" border="0" />
+  <img src="imgs/yanukovich01.jpg" width="250" height="220" />
 </div>
 <h3 class="tsize2 animated fadeInRight anim-delay3s" style="position: absolute; top:330px; left: 250px;">Interactive Web Design</h3>
 
@@ -183,7 +182,7 @@ preload([
             
             $.each( data.slides, function( key, val ) {
               
-              var img_html='<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide animated anim-delay0 fadeIn" />';
+              var img_html='<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide animated anim-delay0 fadeIn" /><p>'+val.desc+'</p>';
               console.log(img_html);
               items.push(img_html);
             });
