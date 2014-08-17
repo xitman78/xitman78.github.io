@@ -125,17 +125,16 @@ element.addEventListener("click", function(e) {
   element.classList.add("anim-delay02s");
 }, false);
 
-$(document).ready(function(){
+  var scroll_flag=false;
+  var foo=$("#footer");
+  var current_slide=0;
+  var items = [];
 
-	var scroll_flag=false;
+$(document).ready(function(){
 
 	function scroller(e){
 
 			if(!scroll_flag) {
-
-				var foo=$("#footer");
-        var current_slide=0;
-        var items = [];
 
 				scroll_flag=true;
 
@@ -163,7 +162,7 @@ $(document).ready(function(){
             
             $.each( data.slides, function( key, val ) {
               
-              var img_html='"<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide" />';
+              var img_html='<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide animated anim-delay0 fadeInZoom" />';
               console.log(img_html);
               items.push(img_html);
             });

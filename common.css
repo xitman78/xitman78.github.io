@@ -177,8 +177,18 @@ body {
 	  animation-fill-mode: both;
 	}
 
+	.anim-delay0 {
+		-webkit-animation-delay: 0;
+		-moz-animation-delay: 0;
+		-ms-animation-delay: 0;
+		-o-animation-delay: 0;
+	}
+
 	.anim-delay02 {
 		-webkit-animation-delay: 0.2s;
+		-moz-animation-delay: 0.2s;
+		-ms-animation-delay: 0.2s;
+		-o-animation-delay: 0.2s;
 	} 
 	.anim-delay05 {
 		-webkit-animation-delay: 0.5s;
