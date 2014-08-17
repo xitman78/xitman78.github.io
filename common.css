@@ -12,6 +12,17 @@ body {
 		margin: 0;
 	}
 
+	.tac {
+		text-align: center;
+	}
+
+	.tar {
+		text-align: right;
+	}
+	.tal {
+		text-align: left;
+	}
+
 
 	.navwrap {
 		background-color: #333;
@@ -113,7 +124,7 @@ body {
 	}
 
 	#circle {
-		-webkit-transform-origin:0 0;
+		-webkit-transform-origin: 0px 0px;
 		-webkit-animation: rotator 3s linear 0s infinite;
 
 	}
@@ -140,13 +151,13 @@ body {
 
 #center_media {
 	position: absolute;
-		top:0;
-	    bottom: 0;
-	    left: 0;
-	    right: 0;
-		margin: auto;
-		width: 1000px;
-		height: 500px;
+	top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	margin: auto;
+	width: 1000px;
+	height: 500px;
 }
 
 
@@ -381,20 +392,23 @@ body {
 
 	#scroll-content {
 		position: absolute;
-		top: 260px;
+		top: 240px;
 		left: 0px;
 		right: 0px;
 		margin: auto;
-		display: hidden;
+		display: none;
 		width: 100%;
 		text-align: center;
-		background-color: rgba(1,1,1,0.75);
-		opacity:0;
-		-webkit-transition: opacity 1s ease-in-out;
-  		-moz-transition: opacity 1s ease-in-out;
-  		-ms-transition: opacity 1s ease-in-out;
-  		-o-transition: opacity 1s ease-in-out;
-  		transition: opacity 1s ease-in-out;
+		background-color: rgba(0,0,0,0);
+		-webkit-transition: background-color 1s ease-in-out;
+  		-moz-transition: background-color 1s ease-in-out;
+  		-ms-transition: background-color 1s ease-in-out;
+  		-o-transition: background-color 1s ease-in-out;
+  		transition: background-color 1s ease-in-out;
+	}
+
+	.one-slide {
+		border:solid 1px #FFF;
 	}
 
 	.ttable {
@@ -412,6 +426,17 @@ body {
 		text-align: left;
 		padding-left: 20px;
 		vertical-align: middle;
+		cursor:pointer;
+	}
+
+	#t-rect,#t-rect2 {
+		fill:#FFF;
+		stroke:none;
+		opacity:0.1
+	}
+
+	.l-cell:hover #t-rect {
+		opacity:0.3
 	}
 
 	.c-cell {
@@ -428,6 +453,11 @@ body {
 		text-align: right;
 		vertical-align: middle;
 		padding-right: 20px;
+		cursor:pointer;
+	}
+
+	.r-cell:hover #t-rect2 {
+		opacity:0.3
 	}
 
 	.img-trans {
