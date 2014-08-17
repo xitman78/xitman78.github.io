@@ -8,6 +8,9 @@
 <link rel="stylesheet" type="text/css" href="common.css">
 </head>
 <body>
+<div class="bg-image">
+<img src="imgs/honka-bg.jpg" alt="" />
+</div>
 <div class="navwrap">
 <ul id="nav">
 <li style="width:100px;">&nbsp;</li>
@@ -60,7 +63,7 @@
 <h3 class="tsize1 animated fadeInRight anim-delay1s" style="position: absolute; top:130px; left: 150px;">HTML5 Web Motion </h3>
 <h3 class="tsize3  animated fadeInLeft anim-delay2s" style="position: absolute; top:140px; left: 300px;">CSS Magics</h3>
 <div class="tsize2 animated fadeInLeft anim-delay2s" style="position: absolute; top:85px; left: 720px;width:250px; height:220px; border: solid 1px #CCC;">
-  <img src="imgs/yanukovich01.jpg" width="250" height="220" />
+  <img src="imgs/yanukovich01.jpg" width="250" height="220" alt="Yanukovich" />
 </div>
 <h3 class="tsize2 animated fadeInRight anim-delay3s" style="position: absolute; top:330px; left: 250px;">Interactive Web Design</h3>
 
@@ -98,7 +101,6 @@ Start Tour
 </div>
 </div>
 </div>
-<div id="tslides"></div>
 <script type="text/javascript">
 // retrieve the element
 element = document.getElementById("b_box");
@@ -137,7 +139,7 @@ $(document).ready(function(){
         // Alternatively you could use:
         // (new Image()).src = this;
     });
-}
+  }
 
 // Usage:
 
@@ -171,7 +173,7 @@ preload([
 				setTimeout(function(){
           //$("#scroll-content").load("scroll-content.html");
 
-          $("#scroll-content").css("display","block");
+          $("#scroll-content").css("visibility","visible");
 
            $("#scroll-content").css("background-color","rgba(0,0,0,0.5)");
 
@@ -230,9 +232,6 @@ preload([
 
         }, 1000);
 
-        setTimeout(function(){
-          $(".img-trans").css("opacity","1");
-        },2000);
 
 			}
 
