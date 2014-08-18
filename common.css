@@ -163,6 +163,10 @@ body {
 	}
 
 	#dash-wait {
+		width:50px;
+		height:50px;
+		position:absolute;top:0px;
+		z-index:910;
 		-webkit-transform-origin:25px 25px;
 		-moz-transform-origin:25px 25px;
 		-ms-transform-origin:25px 25px;
@@ -174,14 +178,29 @@ body {
 	}
 
 	#rot-preload {
+		width:50px;
+		height:50px;
+		position:absolute;
+		top:0;bottom:0;left:0;right:0;
+		margin:auto;
+		z-index:999;
+		visibility: visible;
 		-webkit-transform-origin:25px 25px;
 		-moz-transform-origin:25px 25px;
 		-ms-transform-origin:25px 25px;
 		-webkit-animation: rotator 3s linear 0s infinite;
 		-moz-animation: rotator 3s linear 0s infinite;
 		-ms-animation: rotator 3s linear 0s infinite;
-		visibility: visible;
+		
+	}
 
+	#icon-wrap {
+		width:50px;
+		height:50px;
+		display:block;
+		position:relative;
+		top:180px;left:0;right:0;
+		margin:auto;
 	}
 
 	.cell {
@@ -202,6 +221,7 @@ body {
 
 	#b_box {
 
+		position: absolute; top:320px; left:480px;
 		width:300px;
 		height: 50px;
 		border: solid 5px #FFF;
@@ -664,6 +684,40 @@ body {
   		transition: background-color 1s ease-in-out;
 	}
 
+	#target-circle {
+		position: absolute; top:203px; left: 854px; 
+		width:200px; height: 200px;
+		z-index:500;
+	}
+
+	#text01 {
+		position: absolute; 
+		top:130px; left: 150px;
+	}
+
+	#text02 {
+		position: absolute; 
+		top:140px; left: 300px;
+	}
+
+	#image01 {
+		position: absolute; 
+		top:85px; left: 720px;
+		width:250px; height:220px; 
+		border: solid 1px #CCC;
+	}
+
+	#text03 {
+		position: absolute; 
+		top:330px; left: 250px;
+	}
+
+	#scroll-arrow {
+		height:50px;width:80px;
+		cursor:pointer;left:0;right:0;
+		margin:auto;
+	}
+
 	.one-slide {
 		border:solid 1px #FFF;
 	}
@@ -729,6 +783,11 @@ body {
 	}
 
 	.reload {
+		width:50px;
+		height:50px;
+		position:absolute;
+		top:0px;
+		z-index:920;
 		visibility: hidden;
 	}
 

@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id="preload">
-  <div id="rot-preload" style="width:50px;height:50px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;z-index:999;">
+  <div id="rot-preload">
     <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
       <circle cx="25" cy="25" r="20" stroke="#FFF" stroke-width="6" fill="none" stroke-dasharray="0.01 16"  stroke-linecap="round" />
     </svg>
@@ -44,13 +44,13 @@
 <p>The place where ex-president Yanukovich was happy.</p>
 </div>
 <div class="tac" style="width:100%">
-<div style="width:50px;height:50px;display:block;position:relative;top:180px;left:0;right:0;margin:auto;">
-  <div id="dash-wait" class="animated fadeOutZoom anim-delay4s" style="width:50px;height:50px;position:absolute;top:0px;z-index:910;">
+<div id="icon-wrap">
+  <div id="dash-wait" class="animated fadeOutZoom anim-delay4s">
     <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
     	<circle cx="25" cy="25" r="20" stroke="#FFF" stroke-width="6" fill="none" stroke-dasharray="0.01 16"  stroke-linecap="round" />
     </svg>
   </div>
-  <div id="reload" class="animated fadeInZoom anim-delay5s" style="width:50px;height:50px;position:absolute;top:0px;z-index:920;">
+  <div id="reload" class="animated fadeInZoom anim-delay5s">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
       <path d="M 25 42 A 15 15 0 1 0 10 27" fill="none" stroke="#000" style="opacity:0.5" stroke-width="4" />
       <polygon points="2,27 18,27 10,34" fill="#000" style="opacity:0.5" stroke="none" />
@@ -61,26 +61,26 @@
 </div>
 </div>
 <div id="center_media">
-<div style="position: absolute; top:203px; left: 854px; width:200px; height: 200px;z-index:500" class="animated fadeInZoom anim-delay2s">
+<div id="target-circle" class="animated fadeInZoom anim-delay2s">
 <svg id="circle" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200">
   <circle cx="0" cy="0" r="40" stroke="#FFF" stroke-width="4" fill="none" />
   <circle cx="0" cy="0" r="34" stroke="#FFF" stroke-width="2" fill="none" style="opacity:0.4"/>
   <circle cx="0" cy="0" r="6" stroke="#FFF" stroke-width="4" fill="none" style="opacity:0.3"/>
 </svg>
 </div>
-<h3 class="tsize1 animated fadeInRight anim-delay1s" style="position: absolute; top:130px; left: 150px;">HTML5 Web Motion </h3>
-<h3 class="tsize3  animated fadeInLeft anim-delay2s" style="position: absolute; top:140px; left: 300px;">CSS Magics</h3>
-<div class="tsize2 animated fadeInLeft anim-delay2s" style="position: absolute; top:85px; left: 720px;width:250px; height:220px; border: solid 1px #CCC;">
+<h3 id="text01" class="tsize1 animated fadeInRight anim-delay1s">HTML5 Web Motion </h3>
+<h3 id="text02" class="tsize3  animated fadeInLeft anim-delay2s">CSS Magics</h3>
+<div id="image01" class="tsize2 animated fadeInLeft anim-delay2s">
   <img src="imgs/yanukovich01.jpg" width="250" height="220" alt="Yanukovich" />
 </div>
-<h3 class="tsize2 animated fadeInRight anim-delay3s" style="position: absolute; top:330px; left: 250px;">Interactive Web Design</h3>
+<h3 id="text03" class="tsize2 animated fadeInRight anim-delay3s">Interactive Web Design</h3>
 
-<div id="b_box" class="animated fadeInZoom anim-delay4s tsize1" style="position: absolute; top:320px; left:480px;">
+<div id="b_box" class="animated fadeInZoom anim-delay4s tsize1">
 Start Tour
 </div>
 </div>
 <div id="footer" class="footer tac animated fadeInUp anim-delay5s">
-<div id="scroll-arrow" style="height:50px;width:80px;cursor:pointer;left:0;right:0;margin:auto;">
+<div id="scroll-arrow">
 <svg height="50" width="80">
 <polyline points="20,14 40,34 60,14" stroke-linecap="round"
   style="fill:none;stroke:#000;stroke-width:4;opacity:0.5;" />
@@ -112,25 +112,19 @@ Start Tour
 </div>
 </div>
 <script type="text/javascript">
-// retrieve the element
-element = document.getElementById("b_box");
 
-// reset the transition by...
-element.addEventListener("click", function(e) {
+  element = document.getElementById("b_box");
+
+  element.addEventListener("click", function(e) {
   e.preventDefault;
   
-  // -> removing the class
   element.classList.remove("animated");
   element.classList.remove("fadeInZoom");
   element.classList.remove("anim-delay4s");
   element.classList.remove("anim-delay02s");
   
-  
-  // -> triggering reflow /* The actual magic */
-  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
   element.offsetWidth = element.offsetWidth;
-  
-  // -> and re-adding the class
+
   element.classList.add("animated");
   element.classList.add("fadeInZoom");
   element.classList.add("anim-delay02s");
@@ -142,28 +136,6 @@ element.addEventListener("click", function(e) {
   var items = [];
 
 $(document).ready(function(){
-
- /* function preload(arrayOfImages) {
-    $(arrayOfImages).each(function(){
-        $('<img/>')[0].src = this;
-        // Alternatively you could use:
-        // (new Image()).src = this;
-    });
-  }
-
-// Usage:
-
-preload([
-    'imgs/honka-bg.jpg',
-    'imgs/yanukovich01.jpg',
-    'imgs/slides/slide01.jpg',
-    'imgs/slides/slide02.jpg',
-    'imgs/slides/slide03.jpg',
-    'imgs/slides/slide04.jpg',
-    'imgs/slides/slide05.jpg',
-    'imgs/slides/slide06.jpg',
-]);*/
-  
 
 var bg_url = 'imgs/honka-bg.jpg';
 
@@ -218,15 +190,9 @@ console.log(bg_url);
                 items.push(img_html);
                 (new Image()).src = val.uri;
               });
-          
-            //console.log(img_html);
-           //var src=data.items[0].slides.uri;
-              //var width=data.slides[0].w;
-              //var height=data.slides[0].h;
 
                 $("#slider").html(items[0]);
 
-               //console.log( "success - " + items[current_slide].uri);
           })
             .done(function() {
               console.log( "second success" );
@@ -240,15 +206,10 @@ console.log(bg_url);
             
 
 				setTimeout(function(){
-          //$("#scroll-content").load("scroll-content.html");
 
             $("#scroll-content").css("visibility","visible");
 
-             $("#scroll-content").css("background-color","rgba(0,0,0,0.5)");
-
-          //$("#scroll-content").css("display","block");
-
-            
+             $("#scroll-content").css("background-color","rgba(0,0,0,0.5)");        
 
             $("#center_media").remove();
 
@@ -283,8 +244,6 @@ console.log(bg_url);
 
 
 });
-
-
 
 </script>
 
