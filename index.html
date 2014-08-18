@@ -208,32 +208,23 @@ console.log(bg_url);
 
 				$("#center_media").fadeOut(1000);
 
-				setTimeout(function(){
-          //$("#scroll-content").load("scroll-content.html");
-
-          $("#scroll-content").css("visibility","visible");
-
-           $("#scroll-content").css("background-color","rgba(0,0,0,0.5)");
-
-          //$("#scroll-content").css("display","block");
-
-          $.getJSON( "slides.json", function(data) {
+        $.getJSON( "slides.json", function(data) {
 
             
-            $.each( data.slides, function( key, val ) {
-              
-              var img_html='<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide animated anim-delay0 fadeIn" /><p>'+val.desc+'</p>';
-              console.log(img_html);
-              items.push(img_html);
-              (new Image()).src = val.uri;
-            });
+              $.each( data.slides, function( key, val ) {
+                
+                var img_html='<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide animated anim-delay0 fadeIn" /><p>'+val.desc+'</p>';
+                console.log(img_html);
+                items.push(img_html);
+                (new Image()).src = val.uri;
+              });
           
             //console.log(img_html);
            //var src=data.items[0].slides.uri;
               //var width=data.slides[0].w;
               //var height=data.slides[0].h;
 
-              $("#slider").html(items[0]);
+                $("#slider").html(items[0]);
 
                //console.log( "success - " + items[current_slide].uri);
           })
@@ -246,6 +237,18 @@ console.log(bg_url);
             .always(function() {
               console.log( "complete" );
             });
+            
+
+				setTimeout(function(){
+          //$("#scroll-content").load("scroll-content.html");
+
+            $("#scroll-content").css("visibility","visible");
+
+             $("#scroll-content").css("background-color","rgba(0,0,0,0.5)");
+
+          //$("#scroll-content").css("display","block");
+
+            
 
             $("#center_media").remove();
 
