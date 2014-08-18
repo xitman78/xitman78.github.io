@@ -173,6 +173,33 @@ body {
 
 	}
 
+	#rot-preload {
+		-webkit-transform-origin:25px 25px;
+		-moz-transform-origin:25px 25px;
+		-ms-transform-origin:25px 25px;
+		-webkit-animation: rotator 3s linear 0s infinite;
+		-moz-animation: rotator 3s linear 0s infinite;
+		-ms-animation: rotator 3s linear 0s infinite;
+		visibility: visible;
+
+	}
+
+	.cell {
+		display: table-cell;
+	}
+
+	.table {
+		display: table;
+	}
+
+	.collumn {
+		display: table-column;
+	}
+
+	.row {
+		display: table-row;
+	}
+
 	#b_box {
 
 		width:300px;
@@ -711,6 +738,7 @@ body {
 		z-index:990;
 		width: 100%;
 		height: 100%;
+		display:table;
 	}
 
 	#all-wrap {
