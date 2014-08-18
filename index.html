@@ -229,6 +229,7 @@ console.log(bg_url);
               var img_html='<img src="' + val.uri + '"  width="'+val.w+'" height="'+val.h+'" class="one-slide animated anim-delay0 fadeIn" /><p>'+val.desc+'</p>';
               console.log(img_html);
               items.push(img_html);
+              (new Image()).src = val.uri;
             });
           
             //console.log(img_html);
