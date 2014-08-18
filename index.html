@@ -54,7 +54,7 @@
     	<circle cx="25" cy="25" r="20" stroke="#FFF" stroke-width="6" fill="none" stroke-dasharray="0.01 16"  stroke-linecap="round" />
     </svg>
   </div>
-  <div id="reload" class="animated fadeInZoom anim-delay5s">
+  <div id="reload"  class="icon-hover">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 50 50" x="0px" y="0px">
       <path d="M 25 42 A 15 15 0 1 0 10 27" fill="none" stroke="#000" style="opacity:0.5" stroke-width="4" />
       <polygon points="2,27 18,27 10,34" fill="#000" style="opacity:0.5" stroke="none" />
@@ -62,20 +62,38 @@
       <polygon points="2,25 18,25 10,32" fill="#FFF" stroke="none" />
     </svg>
   </div>
+  <div id="like-icon" class="icon-hover">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+
+   <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+  M9.688,37.883h8.625c0,0,4.354,4.785,10.58,4.785c2.981,0,6.205,0,6.205,0s1.569,0,2.027-2.204c0.401-1.933-1.521-2.375-1.521-2.375
+  s3.271,0.061,3.271-2.419c0-2.081-1.375-2.269-1.375-2.269s3.053-0.331,3.053-3.231c0-2.331-2.928-2.269-2.928-2.269
+  S40,27.138,40,24.866s-5.578-1.859-5.578-1.859l-2.736-0.029c0,0-4.631-0.777-4.631-3.669s3.511-7.178,2.979-9.937
+  c-0.971-5.032-4.339-4.339-4.339-4.339s0.413,4.131-0.001,5.785c-0.412,1.653-4.274,4.213-4.881,5.459
+  c-0.852,1.75-0.904,6.524-4.83,6.524s-6.295,0-6.295,0" transform="translate(0,3)" opacity="0.5"/>
+<path fill="none" stroke="#FFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+  M9.688,37.883h8.625c0,0,4.354,4.785,10.58,4.785c2.981,0,6.205,0,6.205,0s1.569,0,2.027-2.204c0.401-1.933-1.521-2.375-1.521-2.375
+  s3.271,0.061,3.271-2.419c0-2.081-1.375-2.269-1.375-2.269s3.053-0.331,3.053-3.231c0-2.331-2.928-2.269-2.928-2.269
+  S40,27.138,40,24.866s-5.578-1.859-5.578-1.859l-2.736-0.029c0,0-4.631-0.777-4.631-3.669s3.511-7.178,2.979-9.937
+  c-0.971-5.032-4.339-4.339-4.339-4.339s0.413,4.131-0.001,5.785c-0.412,1.653-4.274,4.213-4.881,5.459
+  c-0.852,1.75-0.904,6.524-4.83,6.524s-6.295,0-6.295,0"/>
+</svg>
+  </div>
 </div>
 </div>
 <div id="center_media">
-<div id="target-circle" class="animated fadeInZoom anim-delay2s">
-<svg id="circle" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200">
-  <circle cx="0" cy="0" r="40" stroke="#FFF" stroke-width="4" fill="none" />
-  <circle cx="0" cy="0" r="34" stroke="#FFF" stroke-width="2" fill="none" style="opacity:0.4"/>
-  <circle cx="0" cy="0" r="6" stroke="#FFF" stroke-width="4" fill="none" style="opacity:0.3"/>
-</svg>
-</div>
 <h3 id="text01" class="tsize1 animated fadeInRight anim-delay1s">HTML5 Web Motion </h3>
 <h3 id="text02" class="tsize3  animated fadeInLeft anim-delay2s">CSS Magics</h3>
-<div id="image01" class="tsize2 animated fadeInLeft anim-delay2s">
-  <img src="imgs/yanukovich01.jpg" width="250" height="220" alt="Yanukovich" />
+<img src="imgs/yanukovich01.jpg" width="250" height="220" alt="Yanukovich" id="image01" class="animated fadeInLeft anim-delay2s"/>
+<div id="target-hover">
+<div id="target-circle" class="animated fadeInZoom anim-delay2s">
+  <svg id="circle" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200">
+    <circle cx="0" cy="0" r="40" stroke="#FFF" stroke-width="4" fill="none" />
+    <circle cx="0" cy="0" r="34" stroke="#FFF" stroke-width="2" fill="none" style="opacity:0.4"/>
+    <circle cx="0" cy="0" r="6" stroke="#FFF" stroke-width="4" fill="none" style="opacity:0.3"/>
+  </svg>
+</div>
 </div>
 <h3 id="text03" class="tsize2 animated fadeInRight anim-delay3s">Interactive Web Design</h3>
 
@@ -152,8 +170,16 @@ img.onload = function()
 
     $("#preload").fadeOut(1000);
         //$("#preload").css("visibility","hidden");
-    
-    setTimeout(function(){$("#preload").remove();},1000);
+
+       // $("#reload").css("opacity","1");
+        //$("#reload").css("visibility","visible");
+
+    setTimeout(function(){
+        $("#preload").remove();
+      
+        $("#reload").fadeIn(1000);
+        $("#reload").click(function(){location.replace("index.html");});
+      },1000);
 
 };
 img.src = bg_url;
@@ -165,12 +191,7 @@ console.log(bg_url);
   $(window).scroll(scroller);
   $("#scroll-arrow").click(scroller);
 
-  setTimeout(function(){
-      $("#dash-wait").fadeOut(1000);
-      $("#reload").css("visibility","visible");
-      $("#reload").css("cursor","pointer");
-      $("#reload").click(function(){ location.replace("index.html");});
-  },5000);
+  
 
 	function scroller(e){
 
@@ -242,6 +263,16 @@ console.log(bg_url);
             });
 
         }, 1000);
+
+        setTimeout(function(){
+            
+            //$("#like-icon").css("visibility","visible");
+
+            $("#like-icon").fadeIn(1000);
+
+            $("#like-icon").click(function(){alert("Thank you for your attention!");});
+
+        },2000);
 
 
 			}
