@@ -25,10 +25,10 @@
 <li><a href="#">Home</a></li>
 <li><a href="#">About Us</a>
 	<ul>
-		<li><a href="#">CSS-only&nbsp;drop-down&nbsp;menu</a></li>
-		<li><a href="#">Minimum JS framework</a></li>
+		<li><a href="#">CSS-only&nbsp;menu</a></li>
+		<li><a href="#">Minimum&nbsp;JS&nbsp;framework</a></li>
     <li><a href="#">Single&nbsp;Page&nbsp;Application</a></li>
-		<li><a href="#">This&nbsp;is&nbsp;CSS&nbsp;menu</a></li>
+		<li><a href="#">SVG Graphics</a></li>
     <li><a href="#">CSS Animations</a></li>
     <li><a href="#">JQuery&nbsp;plus&nbsp;JSON&nbsp;Slidesow</a></li>
 	</ul>
@@ -149,8 +149,12 @@ img.onload = function()
 {
     // do transitions here...
     $("#all-wrap").css("visibility","visible");
-    $("#preload").css("visibility","hidden");
-    $("#preload").remove();
+
+    $("#preload").fadeOut(1000);
+        //$("#preload").css("visibility","hidden");
+    
+    setTimeout(function(){$("#preload").remove();},1000);
+
 };
 img.src = bg_url;
 
